@@ -9,7 +9,7 @@ script:
 
 after_success:
   - docker build -t atabekcyber/multi-client ./client
-  - docker build -t atabekcyber/multi-nginx ./ngnix
+  - docker build -t atabekcyber/multi-nginx ./nginx
   - docker build -t atabekcyber/multi-server ./server
   - docker build -t atabekcyber/multi-worker ./worker
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin
