@@ -14,6 +14,6 @@ after_success:
   - docker build -t atabekcyber/multi-worker ./worker
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push atabekcyber/multi-client
-  - docker push atabekcyber/multi-ngnix
+  - docker push atabekcyber/multi-nginx
   - docker push atabekcyber/multi-worker
   - docker push atabekcyber/multi-server
