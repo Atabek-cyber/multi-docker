@@ -19,6 +19,7 @@ after_success:
   - docker push atabekcyber/multi-server
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: 'us-west-1'
   app: 'multi-docker'
