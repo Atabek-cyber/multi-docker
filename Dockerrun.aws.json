@@ -26,7 +26,7 @@
             "name": "nginx",
             "image": "atabekcyber/multi-nginx",
             "hostname": "nginx",
-            "memory": 128,
+            
             "essential": true,
             "portMappings": [
                 {
@@ -34,8 +34,8 @@
 			        "containerPort": 80
                 }
             ],
-            "links": ["client", "server"]
-            
+            "links": ["client", "server"],
+            "memory": 128
         }
     ]
 }
