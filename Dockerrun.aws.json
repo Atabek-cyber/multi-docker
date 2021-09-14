@@ -5,36 +5,37 @@
             "name": "client",
             "image": "atabekcyber/multi-client",
             "hostname": "client",
-            "memory": 200,
+            "memory": 128,
             "essential": false
         },
         {
             "name": "server",
             "image": "atabekcyber/multi-server",
             "hostname": "api",
-            "memory": 200,
+            "memory": 128,
             "essential": false   
         },
         {
             "name": "worker",
             "image": "atabekcyber/multi-worker",
             "hostname": "worker",
-            "memory": 200,
+            "memory": 128,
             "essential": false
         },
         {
             "name": "nginx",
             "image": "atabekcyber/multi-nginx",
             "hostname": "nginx",
-            "memory": 200,
-            "essential": false,
+            "memory": 128,
+            "essential": true,
             "portMappings": [
                 {
                     "hostPort": 80,
 			        "containerPort": 80
                 }
             ],
-            "links": ["client", "server"]
+            "links": ["client", "server"],
+            "memory": 128
         }
     ]
 }
