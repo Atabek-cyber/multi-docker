@@ -1,0 +1,40 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "atabekcyber/multi-client",
+            "hostname": "client",
+            "memory": 200,
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "atabekcyber/multi-server",
+            "hostname": "api",
+            "memory": 200,
+            "essential": false   
+        },
+        {
+            "name": "worker",
+            "image": "atabekcyber/multi-worker",
+            "hostname": "worker",
+            "memory": 200,
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "atabekcyber/multi-nginx",
+            "hostname": "nginx",
+            "memory": 200,
+            "essential": false,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+			        "containerPort": 80
+                }
+            ],
+            "links": ["client", "server"]
+        }
+    ]
+}
